@@ -109,7 +109,7 @@ const getDarwinPaths = () => {
     jsonDebugFileName: `${logDir}${appName}.app.debug`,
     logDir,
     serverConfigFileName: `${logDir}${appName}.app.serverConfig`,
-    socketPath: join(`${libraryDir}Group Containers/keybase/Library/Caches`, appName, socketName),
+    socketPath: join(`${libraryDir}Caches`, appName, socketName),
   }
 }
 
@@ -128,7 +128,7 @@ export const downloadFolder = env.XDG_DOWNLOAD_DIR || KB2.constants.downloadFold
 
 // Empty string means let the service figure out the right directory.
 export const pprofDir = ''
-export const version = 'TODO'
+export const version = __VERSION__
 export {runMode}
 
 const getTimeLocale = () => {

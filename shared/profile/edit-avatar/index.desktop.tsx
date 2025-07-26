@@ -27,7 +27,7 @@ const getFile = async (fileList: FileList | undefined): Promise<string> => {
       if (isDir) {
         return ''
       }
-    } catch (e) {}
+    } catch {}
   }
   return paths.pop() ?? ''
 }
@@ -189,7 +189,13 @@ const EditAvatar = (p: Props) => {
             style={styles.hidden}
             type="file"
           />
-          <Kb.ZoomableImage dragPan={true} src={imageSource} onChanged={onChanged} onLoaded={onImageLoad} />
+          <Kb.ZoomableImage
+            dragPan={true}
+            src={imageSource}
+            onChanged={onChanged}
+            onLoaded={onImageLoad}
+            boxCacheKey="avatar"
+          />
           {!loading && (
             <Kb.Icon
               className="icon"
